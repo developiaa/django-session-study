@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import path
 
 from . import views
+from .drf_views import DjangoRestView, SessionCheckView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # serverside rendering
-    path('', views.index, name='index'),
-    path('result/', views.result, name='result'),
-    path('result2/', views.delete_session, name='delete_session')
+	path('admin/', admin.site.urls),
+	# serverside rendering
+	path('', views.index, name='index'),
+	path('result/', views.result, name='result'),
+	path('result2/', views.delete_session, name='delete_session'),
+
+	# drf
+	path('drf/check/', SessionCheckView.as_view()),
+	path('drf/', DjangoRestView.as_view()),
+
 ]
