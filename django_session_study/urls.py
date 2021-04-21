@@ -20,6 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # serverside rendering
     path('', views.index, name='index'),
-    path('result/', views.result, name='result')
+    path('result/', views.result, name='result'),
+    path('result2/', views.delete_session, name='delete_session')
 ]

@@ -5,21 +5,16 @@
     <title>Thank You</title>
 </head>
 <body>
-<h2>세션 정보</h2>
-<p>
-    sessionID: <strong>{{ session_id }}</strong>
-</p>
-<p>
-    test: <strong>{{ test }}</strong>
-</p>
+<h2>세션이 삭제되었습니다.</h2>
+
 <button onclick="deleteSession()">
-    세션 삭제
+    메인으로
 </button>
 
 </body>
 <script type="text/javascript">
     const deleteSession = () => {
-        window.location.href = 'http://127.0.0.1:8000/result2/'
+        window.location.href = 'http://127.0.0.1:8000'
     }
 </script>
 </html>

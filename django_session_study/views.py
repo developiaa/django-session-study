@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth import logout as auth_logout
 
 
 def index(request):
 	print(request.session.session_key)
-	request.session['test'] = "hahaha"
+	request.session['test'] = "session test value"
 	return render(request, './index.html')
 
 
@@ -16,3 +17,9 @@ def result(request):
 		'test': test
 	}
 	return render(request, './result.html', contents)
+
+
+def delete_session(request):
+	print(request.session.session_key)
+	auth_logout(request)
+	return render(request, './result2.html')
